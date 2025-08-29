@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: sof-event-extractor-frontend
+    runtime: static
+    buildCommand: npm run build
+    staticPublishPath: ./build
+    envVars:
+      - key: REACT_APP_API_URL
+        fromService:
+          type: web
+          name: sof-event-extractor-backend
+          property: host
