@@ -2,6 +2,7 @@ services:
   - type: web
     name: sof-event-extractor-frontend
     runtime: static
+    rootDirectory: frontend
     buildCommand: npm run build
     staticPublishPath: ./build
     envVars:

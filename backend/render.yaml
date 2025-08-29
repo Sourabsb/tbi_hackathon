@@ -2,6 +2,7 @@ services:
   - type: web
     name: sof-event-extractor-backend
     runtime: python3
+    rootDirectory: backend
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
     envVars:
