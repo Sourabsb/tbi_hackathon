@@ -648,6 +648,11 @@ async def health_check():
         "gemini_configured": bool(GEMINI_API_KEY)
     }
 
+@app.get("/health")
+async def simple_health_check():
+    """Simple health check endpoint for cloud platforms"""
+    return {"status": "healthy"}
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
